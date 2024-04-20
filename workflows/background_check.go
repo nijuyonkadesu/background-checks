@@ -1,6 +1,7 @@
 package workflows
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/temporalio/background-checks/activities"
@@ -118,6 +119,8 @@ func (w *backgroundCheckWorkflow) sendReportEmail(ctx workflow.Context, email st
 		StartToCloseTimeout: time.Minute,
 	})
 
+	token := TokenForWorkflow(ctx)
+	fmt.Println("TOKEN:", token)
 	f := workflow.ExecuteActivity(ctx, a.SendReportEmail, activities.SendReportEmailInput{Email: w.Email, Token: TokenForWorkflow(ctx)})
 	return f.Get(ctx, nil)
 }

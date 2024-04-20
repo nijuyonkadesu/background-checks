@@ -254,6 +254,7 @@ func (h *handlers) handleCheckReport(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	token := vars["token"]
 
+	fmt.Println("TOKEN:", token)
 	wfid, runid, err := workflows.WorkflowFromToken(token)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -286,6 +287,7 @@ func (h *handlers) handleAccept(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	token := vars["token"]
 
+	fmt.Println("TOKEN:", token)
 	wfid, runid, err := workflows.WorkflowFromToken(token)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -318,6 +320,7 @@ func (h *handlers) handleDecline(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	token := vars["token"]
 
+	fmt.Println("TOKEN:", token)
 	wfid, runid, err := workflows.WorkflowFromToken(token)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -345,6 +348,7 @@ func (h *handlers) handleEmploymentVerificationDetails(w http.ResponseWriter, r 
 	vars := mux.Vars(r)
 	token := vars["token"]
 
+	fmt.Println("TOKEN:", token)
 	wfid, runid, err := workflows.WorkflowFromToken(token)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -377,6 +381,7 @@ func (h *handlers) handleEmploymentVerificationSubmission(w http.ResponseWriter,
 	vars := mux.Vars(r)
 	token := vars["token"]
 
+	fmt.Println("TOKEN:", token)
 	wfid, runid, err := workflows.WorkflowFromToken(token)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)

@@ -63,12 +63,15 @@ func TokenForWorkflow(ctx workflow.Context) string {
 	info := workflow.GetInfo(ctx)
 
 	rawToken := path.Join(info.WorkflowExecution.ID, info.WorkflowExecution.RunID)
+	token := base64.URLEncoding.EncodeToString([]byte(rawToken)
+	fmt.Println("TOKEN:", token)
 
-	return base64.URLEncoding.EncodeToString([]byte(rawToken))
+	return token
 }
 
 func WorkflowFromToken(token string) (string, string, error) {
 	var rawToken []byte
+	fmt.Println("TOKEN:", token)
 
 	rawToken, err := base64.URLEncoding.DecodeString(token)
 	if err != nil {

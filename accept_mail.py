@@ -1,7 +1,6 @@
 import requests
 
-url = "http://localhost:8083/candidate/QWNjZXB0OnlvdXItZW1haWxAZXhhbXBsZS5jb20vMDA1NjAyYzgtNzkzYy00ZmMyLWI0MDMtMTQyYmMzOTQwMWE5"
-url = "http://localhost:8083/employment/RW1wbG95bWVudFZlcmlmaWNhdGlvbjp5b3VyLWVtYWlsMDFAZXhhbXBsZS5jb20vNDI5MjI5M2EtMzU4Ni00OGQwLThiM2QtODNmNjk2YzMzNDJk"
+url = "http://localhost:8083/employment/RW1wbG95bWVudFZlcmlmaWNhdGlvbjp5b3VyLWVtYWlsMDEyQGV4YW1wbGUuY29tL2ZkOWRlMDQ0LTJmNTMtNDFhMC04YTY4LWZjYzc2MjBmM2FiZg=="
 
 # Define the form data
 data = {

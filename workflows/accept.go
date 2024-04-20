@@ -1,6 +1,7 @@
 package workflows
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/temporalio/background-checks/activities"
@@ -16,6 +17,8 @@ func emailCandidate(ctx workflow.Context, input *AcceptWorkflowInput) error {
 	ctx = workflow.WithActivityOptions(ctx, workflow.ActivityOptions{
 		StartToCloseTimeout: time.Minute,
 	})
+	token := TokenForWorkflow(ctx)
+	fmt.Println("TOKEN:", token)
 
 	i := activities.SendAcceptEmailInput{
 		Email: input.Email,
